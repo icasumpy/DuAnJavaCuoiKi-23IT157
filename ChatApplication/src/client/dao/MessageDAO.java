@@ -62,12 +62,4 @@ public class MessageDAO {
         return messages;
     }
 
-    public void deleteMessage(int id) throws SQLException {
-        String sql = "DELETE FROM messages WHERE id = ?";
-        try (Connection conn = DBUtil.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setInt(1, id);
-            stmt.executeUpdate();
-        }
-    }
 }
